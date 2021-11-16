@@ -16,8 +16,9 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
-    <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
     <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -36,12 +37,20 @@
             </div>
         </div>
     </div>
-   
+
+    <!-- Nav, Alert and sidebar Styles -->
     <script src="{{ asset('admin/js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/smooth-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/perfect-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/chartjs.min.js') }}" defer></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    @if(session('status'))
+        <script>
+            swal("{{ session('status') }} ");   
+        </script>
+    @endif
 
     @yield('scripts')
 
