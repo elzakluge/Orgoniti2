@@ -29,10 +29,10 @@
                         <td>{{ $item->description }}</td>
                         <td>{{ $item->price }}</td>
                         <td>
-                        <img src="{{ asset('assets/uploads/products/'.$item->image)}}" class="cate-image" alt="Product Image">
+                        <img src="{{ asset('assets/uploads/products/'.$item->image) }}" class="cate-image" alt="Product Image">
                         </td>
                         <td>
-                            <a href="{{ url('edit-prod/'.$item->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ url('edit-product/'.$item->id)}}" class="btn btn-primary btn-sm">Edit</a>
                             <a href="{{ url('delete-product/'.$item->id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>

@@ -23,11 +23,12 @@ class ProductController extends Controller
 
     public function insert(Request $request){
         $products = new Product();
-        if($request->hasFile('image')){
+        if($request->hasFile('image'))
+        {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/products',$filename);
+            $file->move('assets/uploads/products/',$filename);
             $products->image = $filename;
         }
         $products->category_id = $request->input('category_id');
@@ -37,7 +38,6 @@ class ProductController extends Controller
         $products->description = $request->input('description');
         $products->price = $request->input('price');
         $products->special_price = $request->input('special_price');
-        $products->image = $request->input('image');
         $products->qty = $request->input('qty');
         $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->popular = $request->input('popular') == TRUE ? '1':'0';
@@ -56,7 +56,8 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
         $products = Product::find($id);
-        if($request->hasFile('image')){
+        if($request->hasFile('image'))
+        {
             $path = 'assets/uploads/products/'.$products->image;
             if(File::exists($path))
             {
@@ -65,7 +66,7 @@ class ProductController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/products',$filename);
+            $file->move('assets/uploads/products/',$filename);
             $products->image = $filename;
         }
         
@@ -75,7 +76,6 @@ class ProductController extends Controller
         $products->description = $request->input('description');
         $products->price = $request->input('price');
         $products->special_price = $request->input('special_price');
-        $products->image = $request->input('image');
         $products->qty = $request->input('qty');
         $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->popular = $request->input('popular') == TRUE ? '1':'0';
