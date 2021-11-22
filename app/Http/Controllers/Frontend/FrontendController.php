@@ -19,4 +19,13 @@ class FrontendController extends Controller
         return view('frontend.category', compact('category'));
     }
 
+    public function viewcategory($url){
+        if(Category::where('url', $url)->exists()){
+            $category = Category::where('url', $url)->first();
+            $products = Product::where('category_id', $category->id)->where('status', '1')->get();
+            return view('frontend.products.index', compact('category', 'products'));
+        } else{
+            return redirect('/')->with('status', "The link is broken, url doesn't exist!");
+        }
+    }
 }

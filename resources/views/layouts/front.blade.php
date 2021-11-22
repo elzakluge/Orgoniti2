@@ -23,6 +23,17 @@
 
     <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <style>
+        a{
+            text-decoration: none !important;
+        }
+        .card{
+            color: black;
+        }
+        .card:hover{
+            color:darkslateblue;
+        }
+    </style>
 
 
 </head>
