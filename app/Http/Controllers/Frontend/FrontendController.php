@@ -28,4 +28,21 @@ class FrontendController extends Controller
             return redirect('/')->with('status', "The link is broken, url doesn't exist!");
         }
     }
+
+    public function productview($category_url, $prod_url){
+        if(Category::where('url', $category_url)->exists())
+        {
+            if(product::where('url', 'prod_url')->exists())
+            {
+                $product = Product::where('url', '$prod_url')->first();
+                return view('frontend.products.view', compact('products'));
+            }
+            else{
+                return redirect('/')->with('status', "The link is broken!");
+            }
+        }
+        else{
+            return redirect('/')->with('status', "No such category found!");
+        }
+    }
 }

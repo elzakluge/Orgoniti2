@@ -14,7 +14,7 @@
                         @foreach ($featured_products as $prod)
                             <div class="item">
                                 <div class="card h-100">
-                                    <img class="card-img-top" src="{{ asset('assets/uploads/products'.$prod->image) }}" alt="Product image">
+                                    <img class="card-img-top" src="{{ asset('assets/uploads/products/'.$prod->image) }}" style="height: 20rem;" alt="Product image">
                                         <div class="card-body">
                                             <h5>{{ $prod->name }}</h5>
                                             <span class="float-start">{{ $prod->special_price }}</span>
