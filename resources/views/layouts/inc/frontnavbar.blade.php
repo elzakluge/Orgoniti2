@@ -14,9 +14,27 @@
           </li>
           @if (Route::has('login'))
                     @auth
-                    <li class="nav-item">
-                      <a href="{{ url('/home') }}" class="nav-link" >Home</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ Auth::user()->name }}
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                My Profile
+                            </a>
+                       </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> 
+                              {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
+                          </form>
+                       </li>
+                       
+                      </ul>
+                  </li>
                     @else
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link">Log in</a>
@@ -29,10 +47,6 @@
                     @endauth
             @endif
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>

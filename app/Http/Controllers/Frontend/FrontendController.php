@@ -29,12 +29,12 @@ class FrontendController extends Controller
         }
     }
 
-    public function productview($category_url, $prod_url){
-        if(Category::where('url', $category_url)->exists())
+    public function productview($cate_url, $prod_url){
+        if(Category::where('url', $cate_url)->exists())
         {
-            if(product::where('url', 'prod_url')->exists())
+            if(product::where('url', $prod_url)->exists())
             {
-                $product = Product::where('url', '$prod_url')->first();
+                $products = Product::where('url', $prod_url)->first();
                 return view('frontend.products.view', compact('products'));
             }
             else{
