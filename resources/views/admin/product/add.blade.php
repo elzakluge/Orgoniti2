@@ -34,12 +34,12 @@
                         <textarea name="description" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Price</label>
-                        <input type="number" class="form-control" name="price">
+                        <label for="">Original Price</label>
+                        <input type="number" class="form-control" name="original_price">
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="">Special Price</label>
-                        <input type="number" class="form-control" name="special_price">
+                        <label for="">Selling Price</label>
+                        <input type="number" class="form-control" name="selling_price">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="">Quantity</label>
