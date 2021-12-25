@@ -38,6 +38,12 @@
           <span class="nav-link-text ms-1">Add Products</span>
         </a>
       </li>
+      <li class="nav-item {{ Request::is('users') ? 'active bg-gradient-primary':'' }}">
+        <a class="nav-link text-white " href="{{ url('users') }}">
+            <i class="material-icons">table_view</i>
+          <span class="nav-link-text ms-1">Users</span>
+        </a>
+      </li>
       
     </ul>
   </div>

@@ -40,38 +40,44 @@
                     @endif
                     <div class="row mt-2">
                         <div class="col-md-2">
-                            <input type="hidden" value="{{$products->id}}" class="prod_id">
+                        <input type="hidden" value="{{ $products->id }}" class="prod_id">
                             <label for="Quantity">Quantity</label>
                             <div class="input-group text-center mb-3">
                                 <button class="input-group-text decriment-btn">-</button>
-                                <input type="text" name="quantity" value="1" class="form-control qty-input text-center" />
+                                <input type="text" name="quantity" class="form-control qty-input text-center" value="1" />
                                 <button class="input-group-text incriment-btn">+</button>
                             </div>
                         </div>
                         <div class="col-md-10">
                             <br />
-                            <button type="button" class="btn btn-success me-3 addToCartBtn float-start">Add to Wishlist</button>
-                            <button type="button" class="btn btn-primary me-3 float-start">Add to Cart</button>
+                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist</button>
+                            <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to Cart</button>
                         </div>
                     </div>
                 </div>
-            
+            </div>
+            <div class="col-md-12">
+                <hr>
+                <h3>Description</h3>
+                <p class="mt-3">
+                    {!! $products->description !!}
+                </p>
             </div>
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('script')
+<script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+<script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}" defer></script>
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
 <script>
+       
     $(document).ready(function (){
-
+        console.log('incriment');
         $('.addToCartBtn').click(function (e){
             e.preventDefault();
 
-            var product_id = $(this).closest('.product_data').find(.'prod_id').val();
-            var product_qty = $(this).closest('.product_data').find(.'qty-input').val();
+            var product_id = $(this).closest('.product_data').find('.prod_id').val();
+            var product_qty = $(this).closest('.product_data').find('.qty-input').val();
 
             $.ajaxSetup({
             headers: {
@@ -88,13 +94,14 @@
                 success: function (response){
                     alert(response.status);
                 }
+               
             });
 
-        }
-
+        });
+        
         $('.incriment-btn').click(function (e) {
             e.preventDefault();
-
+            
             var inc_value = $('.qty-input').val();
             var value  = parseInt(inc_value, 10);
             value = isNaN(value) ? 0 : value;
@@ -106,7 +113,7 @@
 
         $('.decriment-btn').click(function (e) {
             e.preventDefault();
-
+            console.log('decriment');
             var dec_value = $('.qty-input').val();
             var value  = parseInt(dec_value, 10);
             value = isNaN(value) ? 0 : value;
@@ -117,5 +124,12 @@
         });
     });
 </script>
+
+@endsection
+
+
+@section('script')
+
+    
     
 @endsection
