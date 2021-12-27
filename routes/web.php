@@ -22,10 +22,16 @@ Route::get('category/{cate_url}/{prod_url}', [FrontendController::class, 'produc
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('add-to-cart', [CartController::class, 'addProduct']);
+Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
+Route::post('update-cart', [CartController::class, 'updatecart']);
+
+
+ 
 Route::middleware(['auth'])->group(function (){
-    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+    Route::get('cart', [CartController::class, 'viewcart']);
 });
 
 Route::middleware(['auth','isAdmin'])->group(function () {

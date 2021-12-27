@@ -12,6 +12,9 @@
           <li class="nav-item">
            <a class="nav-link active" aria-current="page" href="{{ url('category') }}">Categories</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('cart') }}">Cart</a>
+           </li>
           @if (Route::has('login'))
                     @auth
                     <li class="nav-item dropdown">
