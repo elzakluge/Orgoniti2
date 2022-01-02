@@ -5,10 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\User;
+
 
 
 
@@ -34,6 +35,7 @@ Route::post('update-cart', [CartController::class, 'updatecart']);
 Route::middleware(['auth'])->group(function (){
     Route::get('cart', [CartController::class, 'viewcart']);
     Route::get('checkout', [CheckoutController::class, 'index']);
+    Route::post('place-order', [CheckoutController::class, 'placeorder']);
 
 });
 
