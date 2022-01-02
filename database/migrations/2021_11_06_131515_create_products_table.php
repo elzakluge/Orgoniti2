@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->string('url');
             $table->mediumText('short_description');
             $table->longText('description');
-            $table->string('price');
-            $table->string('special_price');
+            $table->string('original_price');
+            $table->string('selling_price');
             $table->string('image');
             $table->string('qty');
             $table->tinyInteger('status');

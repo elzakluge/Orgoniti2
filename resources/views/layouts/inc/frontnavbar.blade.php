@@ -15,6 +15,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ url('cart') }}">Cart</a>
            </li>
+           
           @if (Route::has('login'))
                     @auth
                     <li class="nav-item dropdown">
@@ -22,11 +23,7 @@
                           {{ Auth::user()->name }}
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                My Profile
-                            </a>
-                       </li>
+                        
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> 
                               {{ __('Logout') }}

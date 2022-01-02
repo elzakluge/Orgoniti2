@@ -36,8 +36,8 @@ class ProductController extends Controller
         $products->url = $request->input('url');
         $products->short_description = $request->input('short_description');
         $products->description = $request->input('description');
-        $products->price = $request->input('original_price');
-        $products->special_price = $request->input('selling_price');
+        $products->original_price = $request->input('original_price');
+        $products->selling_price = $request->input('selling_price');
         $products->qty = $request->input('qty');
         $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->popular = $request->input('popular') == TRUE ? '1':'0';
@@ -74,8 +74,8 @@ class ProductController extends Controller
         $products->url = $request->input('url');
         $products->short_description = $request->input('short_description');
         $products->description = $request->input('description');
-        $products->price = $request->input('original_price');
-        $products->special_price = $request->input('selling_price');
+        $products->original_price = $request->input('original_price');
+        $products->selling_price = $request->input('selling_price');
         $products->qty = $request->input('qty');
         $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->popular = $request->input('popular') == TRUE ? '1':'0';
