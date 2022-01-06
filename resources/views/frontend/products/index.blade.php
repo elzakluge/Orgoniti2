@@ -5,9 +5,9 @@
 @section('content')
 
 <!------ Breadcrumbs ------>
-<div class="py-3 mb-4 shadow-sm bg-secondary border-top">
+<div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
-        <h6 class="mb-0">Collections / {{ $category->name}} </h6>
+        <a href="{{ url( 'categories/') }}"> Categories</a>  / <a> {{ $category->name}} </a>
     </div>
 </div>
 

@@ -8,7 +8,7 @@
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
         <h6 class="mb-0">
-            <a href="{{ url( 'category') }}">Collections</a> / 
+            <a href="{{ url( 'category') }}">Categories</a> / 
             <a href="{{ url( 'category/'.$products->category->url) }}"> {{ $products->category->name}}</a> / 
             <a href="{{ url( 'category/'.$products->category->url.'/'.$products->url) }}">{{$products->name}}</a>
         </h6>
