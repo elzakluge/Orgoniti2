@@ -20,6 +20,4 @@ class CustomOrdersController extends Controller
         $size = Size::all();
         return view('frontend.custom', compact('category', 'glitter', 'crystal', 'color', 'size'));
     } 
-
-    
 }

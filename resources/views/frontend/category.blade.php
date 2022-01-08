@@ -7,11 +7,11 @@
 @section('content')
 
     <!------ Breadcrumbs ------>
-    <div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="py-3 mb-4 shadow-sm bg-secondary border-top">
         <div class="container">
             <h6 class="mb-0">
-                <a href="{{ url( '/') }}">Home</a> / 
-                <a href="{{ url( 'category/') }}"> Categories</a> 
+                <a class="link-dark" href="{{ url( '/') }}">Home</a> / 
+                <a class="link-dark" href="{{ url( 'category/') }}"> Categories</a> 
             </h6>
         </div>
     </div>
@@ -25,7 +25,7 @@
                         @foreach ($category as $cate)
                             <div class="col-md-4 mb-3">
                                 <div class="card h-100">
-                                    <a href="{{ url('category/'.$cate->url) }}">
+                                    <a class="link-dark" href="{{ url('category/'.$cate->url) }}">
                                         <img class="card-img-top" src="{{ asset('assets/uploads/category/'.$cate->image) }}" style="height: 20rem;" alt="Category image">
                                             <div class="card-body">
                                                 <h5>{{ $cate->name }}</h5>

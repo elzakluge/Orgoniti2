@@ -30,9 +30,7 @@
         .card{
             color: black;
         }
-        .card:hover{
-            color:darkslateblue;
-        }
+        
     </style>
 
 

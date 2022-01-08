@@ -13,7 +13,6 @@ class Product extends Model
         'category_id',
         'name',
         'url',
-        'short_description',
         'description',
         'original_price',
         'selling_price',
@@ -21,9 +20,7 @@ class Product extends Model
         'qty',
         'status',
         'popular',
-        'meta_title',
-        'meta_keywords',
-        'meta_description',
+    
     ];
 
     public function category(){

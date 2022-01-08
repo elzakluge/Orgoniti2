@@ -5,9 +5,9 @@
 @section('content')
 
 <!------ Breadcrumbs ------>
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+<div class="py-3 mb-4 shadow-sm bg-secondary border-top">
     <div class="container">
-        <a href="{{ url( 'categories/') }}"> Categories</a>  / <a> {{ $category->name}} </a>
+        <a class="link-dark" href="{{ url( 'category/') }}"> Categories</a>  / <a> {{ $category->name}} </a>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
                 @foreach ($products as $prod)
                     <div class="col-md-3 mb-3">
                         <div class="card h-100">
-                            <a href="{{ url('category/'.$category->url.'/'.$prod->url) }}">
+                            <a class="link-dark" href="{{ url('category/'.$category->url.'/'.$prod->url) }}">
                                 <img class="card-img-top" src="{{ asset('assets/uploads/products/'.$prod->image) }}" style="height: 18rem;" alt="Product image">
                                     <div class="card-body">
                                         <h5>{{ $prod->name }}</h5>

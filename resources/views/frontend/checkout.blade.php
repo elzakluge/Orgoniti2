@@ -5,11 +5,11 @@
 @endsection
 
 <!------ Breadcrumbs ------>
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+<div class="py-3 mb-4 shadow-sm bg-secondary border-top">
     <div class="container">
         <h6 class="mb-0">
-            <a href="{{ url( '/') }}">Home</a> / 
-            <a href="{{ url( 'checkout') }}"> Checkout</a> 
+            <a class="link-dark" href="{{ url( '/') }}">Home</a> / 
+            <a class="link-dark" href="{{ url( 'checkout') }}"> Checkout</a> 
         </h6>
     </div>
 </div>

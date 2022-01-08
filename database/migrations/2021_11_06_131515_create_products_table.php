@@ -18,7 +18,6 @@ class CreateProductsTable extends Migration
             $table->bigInteger('category_id');
             $table->string('name');
             $table->string('url');
-            $table->mediumText('short_description');
             $table->longText('description');
             $table->string('original_price');
             $table->string('selling_price');
@@ -26,9 +25,6 @@ class CreateProductsTable extends Migration
             $table->string('qty');
             $table->tinyInteger('status');
             $table->tinyInteger('popular');
-            $table->mediumText('meta_title');
-            $table->mediumText('meta_keywords');
-            $table->mediumText('meta_description');
             $table->timestamps();
         });
     }

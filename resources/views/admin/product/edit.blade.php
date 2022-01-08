@@ -24,10 +24,6 @@
                         <input type="text" class="form-control" value="{{ $products->url }}" name="url">
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="">Short Description</label>
-                        <textarea name="short_description" rows="3" class="form-control">{{ $products->short_description }}</textarea>
-                    </div>
-                    <div class="col-md-12 mb-3">
                         <label for="">Description</label>
                         <textarea name="description" rows="3" class="form-control">{{ $products->description }}</textarea>
                     </div>
@@ -51,19 +47,6 @@
                         <label for="">Popular</label>
                         <input type="checkbox" {{ $products->popular == "1" ? 'checked':'' }}  name="popular">
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Title</label>
-                        <input type="text" name="meta_title" value="{{ $products->meta_title }}" class="form-control">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Keywords</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control">{{ $products->meta_keywords }}</textarea>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Description</label>
-                        <textarea name="meta_description" rows="3" class="form-control">{{ $products->meta_description }}</textarea>
-                    </div>
-
                     @if ($products->image)
                         <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="Product image">
                     @endif

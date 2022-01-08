@@ -16,9 +16,6 @@ class Category extends Model
         'description',
         'status',
         'image',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
 
     ];
 }

@@ -72,9 +72,6 @@ class CheckoutController extends Controller
 
         $cartitems = Cart::where('user_id', Auth::id())->get();
         Cart::destroy($cartitems);
-        return redirect('/')->with('status', "Order placed successfully!");
-        
+        return redirect('/')->with('status', "Order placed successfully!");  
     }
-
-
 }

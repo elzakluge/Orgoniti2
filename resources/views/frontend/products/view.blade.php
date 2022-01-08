@@ -5,12 +5,12 @@
 @section('content')
 
 <!------ Breadcrumbs ------>
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+<div class="py-3 mb-4 shadow-sm bg-secondary border-top">
     <div class="container">
         <h6 class="mb-0">
-            <a href="{{ url( 'category') }}">Categories</a> / 
-            <a href="{{ url( 'category/'.$products->category->url) }}"> {{ $products->category->name}}</a> / 
-            <a href="{{ url( 'category/'.$products->category->url.'/'.$products->url) }}">{{$products->name}}</a>
+            <a class="link-dark" href="{{ url( 'category') }}">Categories</a> / 
+            <a class="link-dark" href="{{ url( 'category/'.$products->category->url) }}"> {{ $products->category->name}}</a> / 
+            <a class="link-dark" href="{{ url( 'category/'.$products->category->url.'/'.$products->url) }}">{{$products->name}}</a>
         </h6>
     </div>
 </div>
@@ -33,9 +33,6 @@
                     <hr>
                     <label class="me-3">Original Price :<s>EUR {{ $products->original_price }}</s></label>
                     <label class="me-3">Selling Price : EUR {{ $products->selling_price }}</label>
-                    <p class="mt-3">
-                        {!! $products->short_description !!}
-                    </p>
                     <hr>
                     @if ($products->qty > 0)
                         <label class="badge bg-success">In Stock</label>
@@ -57,7 +54,6 @@
                             @if ($products->qty > 0)
                                 <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to Cart</button>
                             @endif
-                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist</button>
                         </div>
                     </div>
                 </div>

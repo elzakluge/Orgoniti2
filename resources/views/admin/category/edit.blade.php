@@ -26,18 +26,6 @@
                         <label for="">Status</label>
                         <input type="checkbox" {{ $category->status == "1" ? 'checked':'' }} name="status">
                     </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Title</label>
-                        <input type="text" value="{{ $category->meta_title }}" name="meta_title" class="form-control">
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Keywords</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control">{{ $category->meta_keywords }}</textarea>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <label for="">Meta Description</label>
-                        <textarea name="meta_description" rows="3" class="form-control">{{ $category->meta_description }}</textarea>
-                    </div>
                     
                     @if($category->image)
                         <img src="{{ asset('assets/uploads/category/'.$category->image) }}" alt="Category image">

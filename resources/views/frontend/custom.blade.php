@@ -7,11 +7,11 @@
 @section('content')
 
 <!------ Breadcrumbs ------>
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+<div class="py-3 mb-4 shadow-sm bg-secondary border-top">
     <div class="container">
         <h6 class="mb-0">
-            <a href="{{ url( '/') }}">Home</a> / 
-            <a href="{{ url( 'create-custom/') }}"> Create your own!</a> 
+            <a class="link-dark" href="{{ url( '/') }}">Home</a> / 
+            <a class="link-dark" href="{{ url( 'create-custom/') }}"> Create your own!</a> 
         </h6>
     </div>
 </div>
@@ -88,11 +88,5 @@
                 <p>Here you can select materials for your own personalized orgonite or pyramid!</p>
             </div>
         </div>
-        
-    
 </div>
-
-
-
-
 @endsection
